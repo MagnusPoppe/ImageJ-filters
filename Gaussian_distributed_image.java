@@ -9,8 +9,8 @@ public class Gaussian_distributed_image implements PlugInFilter
 {
 	ImagePlus imp;
 
-	final static int IMAGE_WIDTH 	= 512;
-	final static int IMAGE_HEIGHT 	= 512;
+	final static int IMAGE_WIDTH 	= 500;
+	final static int IMAGE_HEIGHT 	= 500;
 	final static int MY 			= 50;
 	final static int SIGMA			= 128;
 
@@ -50,8 +50,6 @@ public class Gaussian_distributed_image implements PlugInFilter
 				// http://www.javamex.com/tutorials/random_numbers/gaussian_distribution_2.shtml
 			}
 		}
-
-
 	}
 
 }
