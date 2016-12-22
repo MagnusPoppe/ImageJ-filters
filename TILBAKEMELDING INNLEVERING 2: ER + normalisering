@@ -1,0 +1,82 @@
+TILBAKEMELDING INNLEVERING 2: ER + normalisering
+
+=====================================================================
+MAL
+
+STUDNR OLA NORDMANN
+STUDNR KARI NORDMANN
+
+Les først gjennom løsningsforslaget som er lagt ut, og sammenlign med egen besvarelse. Se deretter gjennom punktene under. Kun feil/mangler blir kommentert, så hvis et spørsmål ikke er omtalt betyr det at alt ser riktig ut. Til slutt finner dere en helhetsvurdering og tips til spesielle ting dere bør se mer på. Kommentarer til deloppgavene:
+
+Oppgave 1. (MEST FOKUS PÅ DENNE)
+
+Oppgave 2. (TROLIG LITE Å KOMMENTERE HER)
+
+Oppgave 3. 
+
+Oppgave 4.
+
+Helhetsinntrykk og tips til hva dere bør se mer på:
+ 
+I hovedsak en god besvarelse. Se mer på identifiserende forhold? Normalisering?
+ 
+==> RESULTAT: Bestått
+
+=====================================================================
+
+SJEKKLISTE ER-MODELL
+
+- Konsekvent notasjon (Workbench eller lærebok)
+- Fornuftige entiteter?
+- Alle entiteter med?
+- Alle attributter med?
+- Attributter i de riktige entitetene?
+- Fornuftige datatyper?
+- Alle entiteter har identifikator, direkte eller indirekte?
+- Forhold mellom de rette entitetene?
+- Riktig maksimumskardinalitet (en-til-en, en-til-mange, mange-til-mange)
+- Riktig minimumskardinalitet
+- "Ekstra" fremmednøkler?
+
+- Er alle deler av oppgaven med?
+- Redundans?
+
+=====================================================================
+
+EKSEMPLER
+
+Oppgave 1.
+• Ansatt: Kronebeløp (Lønn) bør generelt ha en annen datatype enn INT, f.eks. DECIMAL(8,2).
+• Kontor: Du har laget attributt Leder manuelt - lag forhold i stedet og la Workbench oppprette fremmednøkkelen. Det samme gjelder prosjekleder i prosjekt.
+• Hver kompetanse skulle være en del av en kategori. Denne informasjonen mangler.
+• Hver kategori skulle ha en av de ansatte som ansvarlig. Du har laget tabellen ansvarsperson, men denne mangler en sammenheng med kompetanse. Det burde vært et forhold mellom kompetanse og kategori, og kategori og ansatt. Se løsningsforslaget.
+• Kompetansekrav-tabellen skulle inneholde informasjon om hvor mange personer med en kompetanse som trengs for et prosjekt. Dette antallet mangler.
+• Du bruker nesten alltid 1 som minimuskardinalitet, f.eks. trenger (vel) ikke en ansatt å være knyttet til et prosjekt? 
+• En-til-mange forholdet mellom ansatt og kontor (leder_ansnr) kunne vært en-til-en? Neppe noen som er leder for flere kontorer?
+• Du bruker alltid 1 som minimuskardinalitet, f.eks. trenger (vel) ikke en ansatt å være knyttet til et prosjekt? 
+• Vurder å innføre en surrogatnøkkel (løpenummer) som primærnøkkel i kompetanse, primærnøkler med lange tekster er uheldig. 
+• Forholdet mellom ansatt og prosjekt kan være ikke-identifiserende (stiplet), pnr holder som primærnøkkel i prosjekt. 
+• Et kontor kan ha mange ansatte. Burde være et en-til-mange forhold mellom kontor og ansatt.
+• Kontor: Du har laget attributt Leder manuelt - lag forhold i stedet og la Workbench oppprette fremmednøkkelen. 
+• Tabellen Kompetanseansvarlig ser ut til både å ta vare på hvilken ansatt som er ansvarlig for hvilken kompetansekategori, og hvilke ansatt som har hvilke kompetanser (med fra-dato og til-dato).
+• Sertifikat knytter sammen Ansatt og Kompetanse i modellen din: Men den tillater ikke at mange ansatte kan ha samme kompetanse? Prøv å lage et mange-til-mange mellom ansatt og kompetanse (da får du en tabell som kan erstatte Sertifikat).
+
+
+Oppgave 4.
+• Beskriv gjerne prosessen rundt normalisering nøyere.
+• Start med å vise alle funksjonelle avhengigheter.
+• Vis tabellene i sluttresultatet med både primærnøkler og fremmednøkler tydelig markert.
+• Dere foreslår en egen tabell med løpeNr og typebetegnelse, men hva er forholdet mellom denne tabellen og kontor? Det burde være en fremmednøkkel her?
+• Forklaring og løsning er fornuftig (løsningsforslaget tolker oppgaven litt annerledes og har
+ en tabell ekstra).
+
+=====================================================================
+
+Tips til hva dere bør se mer på:
+• Fremmednøkler
+• Minimumskardinalitet
+• Identifiserende forhold
+• Normalisering 
+• SQL
+
+=====================================================================
